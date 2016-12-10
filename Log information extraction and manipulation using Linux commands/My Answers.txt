@@ -1,0 +1,9 @@
+pwd
+pwd | find -type f -name *.py | wc -l | cat
+find -type d -name *data* | wc -l | cat
+pwd | find -type f -name "*.JPG" -print0 | xargs -0 ls -l -S | tr -s ' ' | cut -d ' ' -f 9 | rev |cut -d '/' -f 1 | rev | head -3
+head -20 ~/wc_day6_1.log | sed -n '10,20p'
+grep '01/May/1998' ~/wc_day6_1.log | head -10
+grep -nr '^0.*0$' ~/wc_day6_1.log | head -10 | cut -d ':' -f 1
+head -10 ~/wc_day6_1.log | tr -s ' ' | cut -d " " -f 6,7,8,9,10
+cut -d " " -f 8 ~/wc_day6_1.log | sort | uniq -c

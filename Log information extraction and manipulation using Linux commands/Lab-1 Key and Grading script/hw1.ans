@@ -1,0 +1,9 @@
+pwd
+find .. -type f -name "*.py" | wc -l
+find . -type d -name "*data*" | wc -l
+find . -type f -name "*.JPG" -exec ls -l {} \; | sort -k 5 -nr | grep -o '[^/]*$' | head -3
+head -20 ~/wc_day6_1.log | tail -11
+grep '01/May/1998' ~/wc_day6_1.log | head -10
+grep '^0' ~/wc_day6_1.log -n | grep '0$' | cut -d':' -f1
+head -10 ~/wc_day6_1.log | sed 's/.*] //g'
+cat ~/wc_day6_1.log | cut -d ' ' -f 8 | cut -d '"' -f 1 | sort | uniq -c | sort -nr | sed 's/^ *//g'
